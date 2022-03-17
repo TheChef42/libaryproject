@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const favicon = require('express-favicon');
 
 const dotenv = require("dotenv");
 dotenv.config()
@@ -12,6 +13,7 @@ var usersRouter = require('./routes/users');
 var catalogRouter = require('./routes/catalog');
 
 var app = express();
+app.use(favicon(path.join(__dirname,'public','images','favicon.ico')));
 
 
 //Set up mongoose connection
